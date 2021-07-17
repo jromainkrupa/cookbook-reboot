@@ -1,6 +1,7 @@
 require_relative "cookbook"
 require_relative "view"
 require_relative "recipe"
+require "amazing_print"
 
 class Controller
   def initialize(cookbook)
@@ -24,5 +25,12 @@ class Controller
     recipe = Recipe.new(name, description)
     # ajouter la recette dans le cookbook
     @cookbook.add(recipe)
+  end
+
+  def destroy
+    list
+    # demander quelle recette le user souhaite détruire (index)
+    index = @view.ask_for("index").to_i - 1
+    @cookbook.delete(index)
   end
 end

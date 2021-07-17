@@ -16,7 +16,7 @@ class Cookbook
     save_csv
   end
 
-  def destroy(recipe_index)
+  def delete(recipe_index)
     @recipes.delete_at(recipe_index)
     save_csv
   end
