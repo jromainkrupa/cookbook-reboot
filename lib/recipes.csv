@@ -1,6 +1,9 @@
-Crumpets,Crumpets description
-Beans & Bacon breakfast,Beans description
-Plum pudding,Pudding description
-Apple pie,Apple pie description
-Christmas crumble,Crumble description
-apple pie,cut some apples
+name,description,prep_time,done
+Crumpets,Crumpets description,15,false
+Beans & Bacon breakfast,Beans description,15,false
+Plum pudding,Pudding description,15,false
+Apple pie,Apple pie description,15,false
+Christmas crumble,Crumble description,15,false
+Apple pie,Apple pie description,15,true
+test,description test,12,true
+Tater Tots® with Truffle Aioli,"There are Tater Tots® and then there are truffle Tater Tots®! Think outside the 'bag' and try this grown-up version next time. Shaved Parmesan works best, but feel free to use grated cheese instead to save some money.",10 mins,true

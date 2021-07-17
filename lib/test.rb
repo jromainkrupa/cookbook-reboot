@@ -1,23 +1,17 @@
-# require_relative "recipe.rb"
-# require_relative "cookbook.rb"
-# require_relative "controller.rb"
+require "nokogiri"
+require "open-uri"
+require_relative "recipe"
 
-# lasagne = Recipe.new("Lasagne","plein de truc")
-# fish = Recipe.new("fish","plein de truc")
+ingredient = "chocolate"
+url = "https://www.allrecipes.com/search/results/?search=#{ingredient}"
 
-# cookbook = Cookbook.new
-# cookbook.add(lasagne)
-# cookbook.add(fish)
+html = open(url).read
 
-# controller = Controller.new(cookbook)
-# # cookbook.create(lasagne)
-# # cookbook.create(fish)
-# # cookbook.destroy(0)
-# # cookbook.all
+doc = Nokogiri::HTML(html,nil,'utf-8')
 
-# controller.list
-
-# controller.create
-
- 
-# # p controller
+recipes = []
+doc.search('.card__recipe').first(5).each do |element|
+  name = element.search('.card__title').text.strip
+  description = element.search('.card__summary').text.strip
+  recipes << Recipe.new(name, description)
+end

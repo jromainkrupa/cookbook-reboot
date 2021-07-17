@@ -10,3 +10,15 @@ router = Router.new(controller)
 
 # Start the app
 router.run
+
+
+# New features TODO today
+
+# 1. Import from the web
+  # nouvelle route
+  # nouvelle action du controller
+  # scrraper un truc
+
+# 2. Recipe prep time
+# 3. Mark recipe as done
+# 4. Rating
